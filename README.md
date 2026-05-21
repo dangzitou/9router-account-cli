@@ -9,7 +9,7 @@ cd /path/to/9router-account-importer
 npm link
 ```
 
-第一次只需要执行一次 `npm link`。之后直接用：
+After the one-time `npm link`, use:
 
 ```bash
 9r-account detect
@@ -71,7 +71,3 @@ Full 9router export:
 - A `.bak.<timestamp>` copy is created next to the database before write unless `--no-backup` is passed.
 - Tokens are never printed.
 - For long JSON, prefer `9r-account import --clipboard` instead of pasting directly into the terminal.
-
-## Chinese
-
-中文说明请看 [README.zh-CN.md](./README.zh-CN.md).
