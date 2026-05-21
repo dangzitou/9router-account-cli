@@ -63,18 +63,18 @@ def main() -> int:
 def print_help() -> None:
     print(
         """Usage:
-  python3 bin/9r-account.py import --clipboard [options]
-  python3 bin/9r-account.py import ./account.json [options]
-  python3 bin/9r-account.py list [options]
-  python3 bin/9r-account.py detect [options]
+  9r-account import --clipboard [options]
+  9r-account import ./account.json [options]
+  9r-account list [options]
+  9r-account detect [options]
 
 Options:
   --clipboard    Read JSON from the system clipboard and pipe it to the Node importer.
 
 Examples:
-  python3 bin/9r-account.py import --clipboard --activate --clear-proxy
-  python3 bin/9r-account.py import ./account.json
-  python3 bin/9r-account.py list --provider codex
+  9r-account import --clipboard --activate --clear-proxy
+  9r-account import ./account.json
+  9r-account list --provider codex
 """
     )
 

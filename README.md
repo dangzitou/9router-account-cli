@@ -7,15 +7,16 @@ Small zero-dependency CLI for importing account JSON into 9router's SQLite datab
 ```bash
 cd /path/to/9router-account-importer
 npm link
+```
 
+第一次只需要执行一次 `npm link`。之后直接用：
+
+```bash
 9r-account detect
 9r-account import ./account.json
 9r-account import ./account.json --clear-proxy --activate
+9r-account import --clipboard --activate --clear-proxy
 9r-account list --provider codex
-
-# Python wrapper, useful for long JSON blobs or clipboard imports
-python3 bin/9r-account.py import --clipboard --activate --clear-proxy
-python3 bin/9r-account.py import ./account.json
 ```
 
 It auto-detects the database in this order:
@@ -69,7 +70,7 @@ Full 9router export:
 - Existing accounts are updated by `id`, then by `provider + authType + email` for OAuth, then by `provider + authType + name` for API key.
 - A `.bak.<timestamp>` copy is created next to the database before write unless `--no-backup` is passed.
 - Tokens are never printed.
-- For long JSON, prefer `python3 bin/9r-account.py import --clipboard` instead of pasting directly into the terminal.
+- For long JSON, prefer `9r-account import --clipboard` instead of pasting directly into the terminal.
 
 ## Chinese
 

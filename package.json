@@ -4,8 +4,8 @@
   "description": "Small CLI for importing provider account JSON into a local 9router SQLite database.",
   "type": "module",
   "bin": {
-    "9r-account": "./bin/9r-account.mjs",
-    "9router-account-import": "./bin/9r-account.mjs"
+    "9r-account": "./bin/9r-account.py",
+    "9router-account-import": "./bin/9r-account.py"
   },
   "engines": {
     "node": ">=22.5.0"
