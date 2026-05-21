@@ -12,6 +12,10 @@ npm link
 9r-account import ./account.json
 9r-account import ./account.json --clear-proxy --activate
 9r-account list --provider codex
+
+# Python 包装器，适合长 JSON 或剪贴板导入
+python3 bin/9r-account.py import --clipboard --activate --clear-proxy
+python3 bin/9r-account.py import ./account.json
 ```
 
 它会按这个顺序自动寻找数据库：
@@ -65,3 +69,4 @@ npm link
 - 已有账号会按 `id` 更新；OAuth 账号再按 `provider + authType + email` 匹配；API Key 账号按 `provider + authType + name` 匹配。
 - 写入前默认会生成 `.bak.<时间戳>` 备份，除非传 `--no-backup`。
 - 不会在终端输出明文 token。
+- 如果 JSON 很长，优先用 `python3 bin/9r-account.py import --clipboard`，避免直接粘贴到终端。
