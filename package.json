@@ -1,0 +1,17 @@
+{
+  "name": "9router-account-importer",
+  "version": "0.1.0",
+  "description": "Small CLI for importing provider account JSON into a local 9router SQLite database.",
+  "type": "module",
+  "bin": {
+    "9r-account": "./bin/9r-account.mjs",
+    "9router-account-import": "./bin/9r-account.mjs"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "self-test": "node ./bin/9r-account.mjs self-test"
+  }
+}
