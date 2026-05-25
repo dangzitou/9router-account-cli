@@ -12,12 +12,14 @@ npm link
 第一次只需要执行一次 `npm link`。之后直接用：
 
 ```bash
+9r-account import
+9r-account paste
 9r-account detect
 9r-account import ./account.json
-9r-account import ./account.json --clear-proxy --activate
-9r-account import --clipboard --activate --clear-proxy
 9r-account list --provider codex
 ```
+
+最常用的是 `9r-account import`：它会直接读取剪贴板里的账号 JSON，自动激活账号，并清理旧代理绑定。`9r-account paste` 是同一个导入动作的别名。
 
 它会按这个顺序自动寻找数据库：
 
@@ -70,4 +72,7 @@ npm link
 - 已有账号会按 `id` 更新；OAuth 账号再按 `provider + authType + email` 匹配；API Key 账号按 `provider + authType + name` 匹配。
 - 写入前默认会生成 `.bak.<时间戳>` 备份，除非传 `--no-backup`。
 - 不会在终端输出明文 token。
-- 如果 JSON 很长，优先用 `9r-account import --clipboard`，避免直接粘贴到终端。
+- 剪贴板导入默认等价于带上 `--activate --clear-proxy`。
+- 如果不想自动激活账号，使用 `--keep-status`。
+- 如果不想清理旧代理绑定，使用 `--keep-proxy`。
+- 输入 `9r-account help` 可以查看用法。

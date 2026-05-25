@@ -12,12 +12,14 @@ npm link
 After the one-time `npm link`, use:
 
 ```bash
+9r-account import
+9r-account paste
 9r-account detect
 9r-account import ./account.json
-9r-account import ./account.json --clear-proxy --activate
-9r-account import --clipboard --activate --clear-proxy
 9r-account list --provider codex
 ```
+
+The common path is `9r-account import`: it reads account JSON from the clipboard, activates the imported account, and clears any old proxy binding. `9r-account paste` is an alias for the same clipboard import flow.
 
 It auto-detects the database in this order:
 
@@ -70,4 +72,7 @@ Full 9router export:
 - Existing accounts are updated by `id`, then by `provider + authType + email` for OAuth, then by `provider + authType + name` for API key.
 - A `.bak.<timestamp>` copy is created next to the database before write unless `--no-backup` is passed.
 - Tokens are never printed.
-- For long JSON, prefer `9r-account import --clipboard` instead of pasting directly into the terminal.
+- Clipboard imports add `--activate --clear-proxy` by default.
+- Use `--keep-status` if you do not want to force activation.
+- Use `--keep-proxy` if you do not want to clear old proxy binding.
+- Run `9r-account help` to show usage.
